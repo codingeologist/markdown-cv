@@ -1,2 +1,3 @@
 *.pdf
+!example-cv.pdf
 my-cv.md
