@@ -1,0 +1,8 @@
+from: gfm-tex_math_dollars
+to: pdf
+pdf-engine: pdflatex
+filters:
+  - document-tools/hardbreaks.lua
+  - document-tools/twocolumn.lua
+  - document-tools/table-widths.lua
+  - document-tools/fontawesome.lua

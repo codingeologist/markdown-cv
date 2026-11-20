@@ -1,71 +1,109 @@
 ---
-header-includes:
-    - '\usepackage{fontawesome}'
-title: Curriculum Vitae
-author: First Name Last Name
-geometry: left=3cm,right=3cm,top=2cm,bottom=2cm
-fontsize: 8pt
-output: pdf_document
+name: "First Name Last Name"
+email: "email@email.com"
+mobile: "+44 (0) 7777 777 777"
+github: "github.com/codingeologist"
+website: "codingeologist.github.io"
+updated: "Last updated: November 2026"
+mainfont: "DejaVuSans"
+monofont: "DejaVuSansMono"
+fontsize: "10pt"
+geometry: "top=2.5cm,bottom=2cm,left=1.5cm,right=1.5cm,a4paper,headheight=46pt,footskip=30pt"
+colorlinks: true
+toc: false
 ---
-```{=latex}
-\begin{center}
-```
-
-| \faComments: [[email@email.com]{.underline}](mailto:email@email.com) | \faMobile: [+44 (0) 7777 777 777]{.underline}
-| \faGithub: [[https://github.com/codingeologist]{.underline}](https://github.com/codingeologist) | \faChrome: [[https://codingeologist.github.io]{.underline}](https://codingeologist.github.io)
-
-```{=latex}
-\end{center}
-```
 
 ## SUMMARY
 
-This repo uses markdown and pandoc to generate a pdf CV with fontawesome icons.
+Results-driven data scientist with 5+ years of experience in building scalable data pipelines and machine learning models. Passionate about open-source software and cloud-native solutions.
 
-## ACHIEVEMENTS
+---
 
-- List achievements on the CV.
+## TECHNICAL SKILLS
+
+**Languages:** Python, SQL, Bash, R, JavaScript, TypeScript
+
+**Databases:** PostgreSQL, MySQL, MongoDB, Redis, AWS Athena, S3
+
+**Cloud:** AWS (EC2, Lambda, ECS, Glue, SQS), Azure, GCP, BigQuery
+
+**Tools:** Docker, Git, PySpark, TensorFlow, PyTorch, Pandas, GeoPandas
+
+**DevOps:** CI/CD, Terraform, Kubernetes, Jenkins
 
 ## WORK EXPERIENCE
 
+**Senior Data Scientist**<br>
+*Tech Company Ltd*<br>
+`2021-Present`
 
-__Company Name__
+- Built and deployed ML models for customer segmentation using PyTorch
+- Designed real-time data pipelines processing 10M+ events/day with Kafka
+- Led a team of 3 data engineers and mentored junior staff
+- Implemented MLOps best practices reducing deployment time by 60%
 
-*Role*
+**Data Analyst**<br>
+*Analytics Inc*<br>
+`2018-2021`
 
-`Start date-end date` *(location)*
+- Developed ETL pipelines for business intelligence using PySpark
+- Created interactive dashboards for executive reporting with Power BI
+- Automated data quality checks reducing errors by 40%
+- Designed and maintained data warehouse architecture
 
-- job role and function.
+**Junior Data Analyst**<br>
+*Data Solutions Ltd*<br>
+`2016-2018`
 
+- Performed data cleaning and preprocessing for analysis
+- Created reports and visualizations for stakeholders
+- Assisted in database design and optimization
 
 ## EDUCATION
 
+**MSc Data Science**<br>
+*University of Technology*<br>
+`2016-2018`
 
-`year from-year to`
-__course__, *Institution*
+Thesis: "Scalable Machine Learning for Geospatial Data"
 
-## TECH STACK
+Grade: Distinction
 
-__Languages__
+**BSc Computer Science**<br>
+*State University*<br>
+`2013-2016`
 
-`Python`, `SQL`, `Bash`, `R`, `GraphQL`, `HTML`, `CSS`, `JavaScript`, `TypeScript`, `TerraForm`
+Specialization: Data Structures and Algorithms
 
-__Databases__
+Grade: First Class Honours
 
-`NoSQL`, `RDBMS`, `Graph Databases`, `PostgreSQL`, `MySQL`, `MongoDB`, `TypeDB`, `AWS Athena`, `AWS S3`, `Database Administration`
+## PROJECTS
 
-__Backend__
+**Open Source Contributions**
 
-`Git`, `PyTest`, `Docker`, `PySpark`, `scikit-learn`, `Tensorflow`, `Ollama`, `Flask`, `Django`, `Pandas`, `GeoPandas`, `API development`, `CICD`, `GIS`, `Terraform`, `Docker`
+- Contributed to Pandas and GeoPandas libraries
+- Maintainer of popular geospatial data processing tool
+- Created Python package for automated data validation
 
-__Cloud__
+**Personal Projects**
 
-`Infrastructure as a Service (IaaS)`, `AWS EC2`, `AWS Lambda`, `AWS ECS`, `AWS Glue`, `AWS SQS`, `DigitalOCean`, `Azure`, `GCP`, `Google Earth Engine`, `BigQuery`
+- Built a real-time weather visualization dashboard with D3.js
+- Created a recommendation engine for local businesses using ML
+- Developed a personal finance tracking application
 
-__Visualisation and Software__
+## CERTIFICATIONS
 
-`Power BI`, `D3.js`, `dash`, `plotly`, `matplotlib`, `seaborn`, `Blender`, `leaflet`, `QGIS`, `ESRI ArcGIS`, `ESRI CityEngine`
+- AWS Certified Data Analytics - Specialty (2023)
+- Google Professional Data Engineer (2022)
+- Microsoft Certified: Azure Data Scientist Associate (2021)
+- Certified Scrum Master (2020)
 
-<!-- ### Footer
+## PUBLICATIONS
 
-Last updated: Dec 2024 -->
+- "Machine Learning for Geospatial Analysis" - Journal of Data Science, 2023
+- "Scalable ETL Pipelines in the Cloud" - Big Data Conference, 2022
+- "Real-time Data Processing with Kafka and PySpark" - Data Engineering Review, 2021
+
+## REFERENCES
+
+Available upon request

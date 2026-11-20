@@ -1,3 +1,17 @@
 *.pdf
 !example-cv.pdf
 my-cv.md
+
+# Document assets
+.document-assets/
+
+# Build scripts output
+*.aux
+*.log
+*.out
+*.toc
+*.bbl
+*.blg
+
+# Node modules (if using mermaid)
+node_modules/
