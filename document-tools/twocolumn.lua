@@ -2,7 +2,7 @@
 -- CV body in a two-column layout.
 --
 -- Contact details are read from the document's YAML metadata:
---   name, email, mobile, github, website, updated
+--   name, email, mobile, github, linkedin, website, updated
 --
 -- The header stacks the name on its own line, with contact details on
 -- one or two lines beneath it (so nothing overlaps on narrow margins).
@@ -29,6 +29,7 @@ function Pandoc(doc)
   local email   = meta_string(doc, 'email',   nil)
   local mobile  = meta_string(doc, 'mobile',  'phone')
   local github  = meta_string(doc, 'github',   nil)
+  local linkedin = meta_string(doc, 'linkedin', nil)
   local website = meta_string(doc, 'website', 'url')
   local updated = meta_string(doc, 'updated', nil)
 
@@ -39,44 +40,50 @@ function Pandoc(doc)
     return "\\href{" .. target .. "}{" .. body .. "}"
   end
 
-  local contacts = {}
+  -- Contacts are grouped semantically across two lines beneath the name:
+  --   line 1: personal reachability (email, mobile)
+  --   line 2: web presence     (github, linkedin, website)
+  -- Empty fields drop out and a group with no entries prints no line.
+  local contact_lines = {}
+
+  local personal = {}
   if email ~= "" then
-    table.insert(contacts, link("mailto:" .. email, "\\faEnvelope\\ " .. email))
+    table.insert(personal, link("mailto:" .. email, "\\faEnvelope\\ " .. email))
   end
   if mobile ~= "" then
     -- tel: links want digits only; strip spaces/parens/plus stays
     local tel = mobile:gsub("[^%d+]", "")
-    table.insert(contacts, link("tel:" .. tel, "\\faMobile\\ " .. mobile))
+    table.insert(personal, link("tel:" .. tel, "\\faMobile\\ " .. mobile))
   end
+  if #personal > 0 then
+    table.insert(contact_lines, table.concat(personal, " \\textbar{} "))
+  end
+
+  local links = {}
   if github ~= "" then
     -- accept either "github.com/user" or a full https URL
     local gh = github:match("^https?://") and github or "https://" .. github
-    table.insert(contacts, link(gh, "\\faGithub\\ " .. github))
+    table.insert(links, link(gh, "\\faGithub\\ " .. github))
+  end
+  if linkedin ~= "" then
+    local li = linkedin:match("^https?://") and linkedin or "https://" .. linkedin
+    table.insert(links, link(li, "\\faLinkedin\\ " .. linkedin))
   end
   if website ~= "" then
     local url = website:match("^https?://") and website or "https://" .. website
-    table.insert(contacts, link(url, "\\faGlobe\\ " .. website))
+    table.insert(links, link(url, "\\faGlobe\\ " .. website))
+  end
+  if #links > 0 then
+    table.insert(contact_lines, table.concat(links, " \\textbar{} "))
   end
 
-  -- Header lines: name first, contacts split across up to two lines
-  -- (roughly half the entries per line) so nothing overlaps.
+  -- Header lines: name first, then the grouped contact lines
   local header_lines = {}
   if name ~= "" then
     table.insert(header_lines, "{\\normalsize\\bfseries " .. name .. "}")
   end
-
-  local n = #contacts
-  if n > 0 then
-    local half = math.ceil(n / 2)
-    local first_half  = table.concat({ table.unpack(contacts, 1, half) }, " \\textbar{} ")
-    local second_half = ""
-    if n > half then
-      second_half = table.concat({ table.unpack(contacts, half + 1, n) }, " \\textbar{} ")
-    end
-    table.insert(header_lines, "{\\small " .. first_half .. "}")
-    if second_half ~= "" then
-      table.insert(header_lines, "{\\small " .. second_half .. "}")
-    end
+  for _, line in ipairs(contact_lines) do
+    table.insert(header_lines, "{\\footnotesize " .. line .. "}")
   end
 
   local header_cmd = ""

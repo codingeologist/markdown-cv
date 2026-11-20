@@ -7,8 +7,8 @@ Pandoc Lua filters shared by CV documents. Referenced from `pdf.yaml`
   pandoc LineBreaks so hard line breaks survive in *both* PDF and
   HTML output (plain pandoc drops `<br>` when writing LaTeX).
 - `twocolumn.lua`: builds a repeating page header/footer from the
-  document metadata (`name`, `email`, `mobile`, `github`, `website`,
-  `updated`) and wraps the document body in an unbalanced LaTeX
+  document metadata (`name`, `email`, `mobile`, `github`, `linkedin`,
+  `website`, `updated`) and wraps the document body in an unbalanced LaTeX
   `multicols*` two-column layout (full-width content before the first
   horizontal rule, two columns after it).
 - `fontawesome.lua`: converts `[fa-*]` icon markers to FontAwesome

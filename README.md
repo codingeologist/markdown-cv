@@ -51,6 +51,7 @@ name: "First Name Last Name"
 email: "email@email.com"
 mobile: "+44 (0) 7777 777 777"
 github: "github.com/codingeologist"
+linkedin: "linkedin.com/in/codingeologist"
 website: "codingeologist.github.io"
 updated: "Last updated: November 2026"
 fontsize: "10pt"
@@ -62,14 +63,15 @@ toc: false
 
 `twocolumn.lua` builds the page furniture from these fields:
 
-- **Header (every page)**: name on its own line (bold), contact
-  details stacked beneath it, split across up to two lines so nothing
-  overlaps: email, mobile, GitHub, website — each with a FontAwesome
-  icon and a *clickable* link (`mailto:`, `tel:`, `https://`)
+- **Header (every page)**: name on its own line (bold), then contact
+  details grouped semantically on two lines beneath it — personal
+  contacts (email, mobile) on the first, web links (GitHub, LinkedIn,
+  website) on the second — each with a FontAwesome icon and a
+  *clickable* link (`mailto:`, `tel:`, `https://`)
 - **Footer (every page)**: `updated` text on the left, `Page N` on
   the right
 
-The GitHub and website values accept either bare domains
+The GitHub, LinkedIn and website values accept either bare domains
 (`github.com/user`) or full URLs (`https://...`). Empty optional
 fields are simply omitted from the header.
 
